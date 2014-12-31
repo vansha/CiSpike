@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.Web", "CiSpike.Web\CiSpike.Web.csproj", "{BCF51C65-2F95-4AE8-B797-091CEF5EEF2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.Web", "src\CiSpike.Web\CiSpike.Web.csproj", "{BCF51C65-2F95-4AE8-B797-091CEF5EEF2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.Web.Tests", "CiSpike.Web.Tests\CiSpike.Web.Tests.csproj", "{BB48329E-01C5-4DCD-9C19-34188F4B5E7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.Web.Tests", "src\CiSpike.Web.Tests\CiSpike.Web.Tests.csproj", "{BB48329E-01C5-4DCD-9C19-34188F4B5E7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
