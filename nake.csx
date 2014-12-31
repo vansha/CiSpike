@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using System.Diagnostics;
 
 const string RootPath = "$NakeScriptDirectory$";
-const string OutputPath = RootPath + @"\Output\build";
+const string OutputPath = RootPath + @"\output\build";
 
 var MSBuildExe = @"$ProgramFiles(x86)$\MSBuild\12.0\Bin\MSBuild.exe";
 
