@@ -13,8 +13,6 @@ param (
     $buildResultsUrl
 )
 
-$PSVersionTable.PSVersion
-
 $postData = @{
     state = $buildState
     target_url = $buildResultsUrl

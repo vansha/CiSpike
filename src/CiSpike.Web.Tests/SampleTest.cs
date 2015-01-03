@@ -15,5 +15,11 @@ namespace CiSpike.Web.Tests
         {
             Assert.Pass("Fixed test");
         }
+
+        [Test]
+        public void FailingTest()
+        {
+            Assert.Fail("Pull request should become in a failed state.");
+        }
     }
 }
