@@ -45,7 +45,7 @@ var MSBuildExe = @"$ProgramFiles(x86)$\MSBuild\12.0\Bin\MSBuild.exe";
     Build("Debug", outputPath);
 
     var tests = new FileSet{@"{outputPath}\*.Tests.dll"}.ToString(" ");
-    Cmd(@"Packages\NUnit.Runners.2.6.4\tools\nunit-console.exe /framework:net-4.0 /noshadow /nologo /xml:output\test-results.xml {tests}");
+    Cmd(@"Packages\NUnit.Runners.2.6.4\tools\nunit-console.exe /framework:net-4.0 /noshadow /nologo /xml:output\test-results.xml {tests}", ignoreExitCode: true);
 }
 
 /// Installs dependencies (packages) from NuGet 
