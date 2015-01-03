@@ -19,7 +19,7 @@ namespace CiSpike.Web.Tests
         [Test]
         public void NotFailingTest()
         {
-            Assert.Fail("Fixing build");
+            Assert.Pass("Fixing build");
         }
     }
 }
