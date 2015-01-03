@@ -11,9 +11,9 @@ namespace CiSpike.Web.Tests
         }
 
         [Test]
-        public void FailingTest()
+        public void AnotherSuccessfulTest()
         {
-            Assert.Fail("Something went wrong");
+            Assert.Pass("Fixed test");
         }
     }
 }
