@@ -9,5 +9,11 @@ namespace CiSpike.Web.Tests
         {
             Assert.Pass("Dummy successful test");
         }
+
+        [Test]
+        public void FailingTest()
+        {
+            Assert.Fail("Something went wrong");
+        }
     }
 }
