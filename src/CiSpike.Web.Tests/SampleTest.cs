@@ -17,9 +17,9 @@ namespace CiSpike.Web.Tests
         }
 
         [Test]
-        public void FailingTest()
+        public void NotFailingTest()
         {
-            Assert.Fail("Pull request should become in a failed state.");
+            Assert.Fail("Fixing build");
         }
     }
 }
