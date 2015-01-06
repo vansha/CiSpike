@@ -21,5 +21,11 @@ namespace CiSpike.Web.Tests
         {
             Assert.Pass("Fixing build");
         }
+
+        [Test]
+        public void Test_That_Our_Universe_Is_Good_Enough_Place_To_Live()
+        {
+            Assert.Fail("Oops. You didn't expect that, did you?");
+        }
     }
 }
