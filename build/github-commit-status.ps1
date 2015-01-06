@@ -16,6 +16,7 @@ param (
 $postData = @{
     state = $buildState
     target_url = $buildResultsUrl
+    context = "Bamboo"
 }
 
 $params = @{
