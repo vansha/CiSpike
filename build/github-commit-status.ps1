@@ -3,7 +3,7 @@ param (
     [string]
     $auth_token = $Env:GITHUB_AUTH_TOKEN,
     
-    [ValidateSet('failure', 'success')]
+    [ValidateSet("pending", "failure", "success")]
     [string]$buildState,
 
     [string]
