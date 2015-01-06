@@ -21,5 +21,11 @@ namespace CiSpike.Web.Tests
         {
             Assert.Pass("Fixing build");
         }
+
+        [Test]
+        public void Failing_Test()
+        {
+            Assert.Pass("Okay. I'm ok now.");
+        }
     }
 }
