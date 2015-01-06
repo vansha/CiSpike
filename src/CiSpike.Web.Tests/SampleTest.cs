@@ -21,5 +21,11 @@ namespace CiSpike.Web.Tests
         {
             Assert.Pass("Fixing build");
         }
+
+        [Test]
+        public void Test_That_3_plus_2_eq_5()
+        {
+            Assert.AreEqual(5, 2 + 3);
+        }
     }
 }
