@@ -25,7 +25,7 @@ namespace CiSpike.Web.Tests
         [Test]
         public void Failing_Test()
         {
-            Assert.Fail("Oops. Developer is high. Don't let him touch a keyboard.");
+            Assert.Pass("Okay. I'm ok now.");
         }
     }
 }
