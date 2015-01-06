@@ -45,7 +45,26 @@ var MSBuildExe = @"$ProgramFiles(x86)$\MSBuild\12.0\Bin\MSBuild.exe";
     Build("Debug", outputPath);
 
     var tests = new FileSet{@"{outputPath}\*.Tests.dll"}.ToString(" ");
-    Cmd(@"Packages\NUnit.Runners.2.6.4\tools\nunit-console.exe /framework:net-4.5 /noshadow /nologo /xml:output\test-results.xml {tests}", ignoreExitCode: true);
+    Cmd(@"Packages\NUnit.Runners.2.6.4\tools\nunit-console.exe /framework:net-4.5.1 /noshadow /nologo /xml:output\test-results.xml {tests}", ignoreExitCode: true);
+}
+
+/// Prepares web deploy package
+[Task] void Package(string config = "Release", string publishProfile = "Default")
+{
+    Exec(MSBuildExe,
+        "CiSpike.sln /p:Configuration={config} /p:DeployOnBuild=true /p:PublishProfile={publishProfile}");
+}
+
+/// Deploys application
+[Task] void Deploy(string computerName = null, string applicationPath = null, string webDeployParams = null, string config = "Release")
+{    
+    Package(config);
+
+    var parameters = !string.IsNullOrEmpty(computerName) ? " /M:{computerName}" : "";
+    parameters += !string.IsNullOrEmpty(applicationPath) ? @" ""-setParam:""IIS Web Application Name""=""{applicationPath}""""" : "";
+    parameters += !string.IsNullOrEmpty(webDeployParams) ? " " + webDeployParams : "";
+
+    Cmd(@"Publish\CiSpike.Web.deploy.cmd /Y" + parameters);
 }
 
 /// Installs dependencies (packages) from NuGet 
@@ -56,7 +75,7 @@ var MSBuildExe = @"$ProgramFiles(x86)$\MSBuild\12.0\Bin\MSBuild.exe";
     var configs = XElement
         .Load(packagesDir + @"\repositories.config")
         .Descendants("repository")
-        .Select(x => x.Attribute("path").Value.Replace("..", RootPath)); 
+        .Select(x => x.Attribute("path").Value.Replace("..", RootPath));
 
     foreach (var config in configs)
         Cmd(@"Tools\NuGet.exe install {config} -o {packagesDir}");

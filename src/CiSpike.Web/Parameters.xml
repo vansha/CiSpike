@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+  
+  <!-- Test -->
+  <parameter
+    name="App-EnvironmentName"
+    description="Environment Name to use (usually short client name)"
+    defaultValue="DEV"
+    tag="Main">
+    <parameterEntry
+      kind="XmlFile"
+      scope="Web.config"
+      match="/configuration/appSettings/add[@key='EnvironmentName']/@value" />
+  </parameter>
+
+</parameters>
