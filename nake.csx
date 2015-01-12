@@ -48,6 +48,12 @@ var MSBuildExe = @"$ProgramFiles(x86)$\MSBuild\12.0\Bin\MSBuild.exe";
     Cmd(@"Packages\NUnit.Runners.2.6.4\tools\nunit-console.exe /framework:net-4.5.1 /noshadow /nologo /xml:output\test-results.xml {tests}", ignoreExitCode: true);
 }
 
+[Task] void IntegrationTest(string outputPath = OutputPath, string categories = "UI,Smoke")
+{
+    var tests = new FileSet{@"{outputPath}\*.IntegrationTests.dll"}.ToString(" ");
+    Cmd(@"Packages\NUnit.Runners.2.6.4\tools\nunit-console.exe /framework:net-4.5.1 /noshadow /nologo /xml:output\test-results.xml {tests} /include:{categories}", ignoreExitCode: true);
+}
+
 /// Prepares web deploy package
 [Task] void Package(string config = "Release", string publishProfile = "Default")
 {
