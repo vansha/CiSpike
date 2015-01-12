@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.Web", "src\CiSpike.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.Web.Tests", "src\CiSpike.Web.Tests\CiSpike.Web.Tests.csproj", "{BB48329E-01C5-4DCD-9C19-34188F4B5E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.IntegrationTests", "src\CiSpike.IntegratonTests\CiSpike.IntegrationTests.csproj", "{43A89A35-F839-49F8-8DCB-B439E9D018E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiSpike.IntegrationTests", "src\CiSpike.IntegrationTests\CiSpike.IntegrationTests.csproj", "{43A89A35-F839-49F8-8DCB-B439E9D018E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
